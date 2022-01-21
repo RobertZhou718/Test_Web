@@ -74,11 +74,17 @@
               </li>
               <li class="nav-item drop_down bg-warning">
                 <a class="nav-link text-dark drop_btn current_page" href="/TaxOnline.html">Tax online</a></li>
+              <div id="loginDiv" >
                 <li class="nav-item drop_down ">
-                  <a class="nav-link text-dark drop_btn ms-5" href="#" data-target="modal-login">Login</a></li>
+                  <a class="nav-link text-dark drop_btn ms-5" href="login.html" data-target="modal-login">Login</a></li>
                 <li class="nav-item drop_down ">
-                  <a class="nav-link text-dark drop_btn" href="#" data-target="modal-signup">Sign up</a></li>
-          </ul>
+                  <a class="nav-link text-dark drop_btn" href="signup.html" data-target="modal-signup">Sign up</a></li>
+
+              </div>
+              <div id="userInfo">
+
+              </div>  
+              </ul>
       </div>          
   </div>  
 </nav>
@@ -431,7 +437,7 @@
         </h2>
 
         <!-- table -->
-        <table class="table-striped table-hover" align="center">
+        <table class="table-striped table-hover">
           <thead>
             <tr>
               <th>First Name</th>
@@ -506,19 +512,19 @@
       </h3>
       <div class="mb-3">
         <label for="formFile" class="form-label">Default file input example</label>
-        <input class="form-control" type="file" id="file" >
+        <input class="form-control form-file" type="file"  >
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Default file input example</label>
-        <input class="form-control" type="file" id="formFile">
+        <input class="form-control form-file" type="file" >
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Default file input example</label>
-        <input class="form-control" type="file" id="formFile">
+        <input class="form-control form-file" type="file" >
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Default file input example</label>
-        <input class="form-control" type="file" id="formFile">
+        <input class="form-control form-file" type="file" >
       </div>
     </div>
   </form>
@@ -546,8 +552,8 @@
         </label>
         </div>
       </div>
-      <div class="col-md-12" align ="center">
-        <button class="btn btn-primary" type="file" id ="file">Submit form</button>
+      <div class="col-md-12" >
+        <button class="btn btn-primary" type="file" id ="upload">Submit form</button>
       </div>
     </form>
   </section>
