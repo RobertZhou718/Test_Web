@@ -25,6 +25,8 @@ export const googleloginbtn = document.querySelector(".google");
 export const loginDiv = document.querySelector("#loginDiv");
 export const userInfo = document.querySelector("#userInfo");
 
+export const files = [...document.querySelectorAll(".formfile")];
+
 export const showLoginDiv = () => {
   loginDiv.classList.add("d-flex");
   loginDiv.style.display = "block";

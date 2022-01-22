@@ -56,6 +56,7 @@ btnLogin.addEventListener("click", loginEmailPassword);
 export function logout() {
   return signOut(auth);
 }
+btnLogout.addEventListener("click", logout);
 
 export function loginWithGoogle() {
   return loginWithAuthProvider(googleProvider);
@@ -92,12 +93,13 @@ export function loginWithAuthProvider(provider) {
       // ...
     });
 }
+export let userEmail;
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       console.log(user);
       showUserInfo();
-
+      userEmail = user.email;
     } else {
       showLoginDiv();
     }

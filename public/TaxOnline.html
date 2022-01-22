@@ -20,7 +20,7 @@
 </head>
 <body>
  <!--navbar-->
- <nav class="navbar navbar-expand-md bg-white navbar-light fixed-top">
+ <nav class="navbar navbar-expand-md bg-white navbar-light fixed-top justify-content-center">
   <div class="container">
       <a href="/" class="navbar-brand"><img src="img/logo.jpg" alt="" width="250" height="55" class="d-inline-block align-text-top"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,8 +82,17 @@
                   <a class="nav-link text-dark drop_btn" href="signup.html" data-target="modal-signup">Sign up</a></li>
 
               </div> -->
-              <div id="userInfo">
-
+              <div id="userInfo" class="mx-5">
+                <li class="nav-item drop_down float-end">
+                  <img src="./img/profile.png" alt="profile" width="65px" class="rounded-circle drop_btn">
+                  <ul class="dropdown-menu dropdown-menu-light drop_down-content" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li class = "text-center">Welcome</li>
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li><button class="dropdown-item" id="btnLogout">Sign out</button></li>
+                   
+                </ul>
+                </li>
+                 
               </div>  
               </ul>
       </div>          
@@ -110,79 +119,65 @@
             <div class="container-fluid">
               <div class="row">
                 <!-- first name -->
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                   <label for="validationCustom01" class="form-label">First name</label>
-                  <input type="text" class="form-control" id="validationCustom01" placeholder="Mark" required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
+                  <input type="text" class="form-control taxform" placeholder="Mark" required>
                 </div>
                 <!-- last name -->
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                   <label for="validationCustom02" class="form-label">Last name</label>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Otto" required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
+                  <input type="text" class="form-control taxform" placeholder="Otto" required>
                 </div>
                 <!-- birth -->
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                   <label for="validationCustomBirth" class="form-label">Date of Birth</label>
                   <div class="input-group has-validation">
-                    <input type="text" class="form-control" id="validationCustomBirth" placeholder="1999/01/23" aria-describedby="inputGroupPrepend" required>
-                    <div class="invalid-feedback">
-                      Please choose a date.
-                    </div>
+                    <input type="text" class="form-control taxform" placeholder="1999/01/23" aria-describedby="inputGroupPrepend" required>
+
                   </div>
                 </div>
                 <!-- sin -->
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                   <label for="validationCustom01" class="form-label">SIN#</label>
-                  <input type="text" class="form-control" id="validationCustom01" placeholder="9 digits" required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
+                  <input type="text" class="form-control taxform" placeholder="9 digits" required>
+
                 </div>
 
                 <!-- email -->
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                   <label for="validationCustom01" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="validationCustom01" placeholder="a@example.com" required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
+                  <input type="text" class="form-control taxform" placeholder="a@example.com" required>
+
                 </div>
 
                 <!-- phone -->
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                   <label for="validationCustom01" class="form-label">Phone</label>
-                  <input type="text" class="form-control" id="validationCustom01" placeholder="11 digits" required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
+                  <input type="text" class="form-control taxform" placeholder="11 digits" required>
+ 
                 </div>
 
                 <!-- mailing address -->
-                <div class="col-md-12 position-relative">
+                <div class="col-md-12 position-relative ">
                   <label for="validationTooltip05" class="form-label">Mailing Address</label>
-                  <input type="text" class="form-control" id="validationTooltip05" placeholder="UnitNumber, StreetNumber and name"required>
+                  <input type="text" class="form-control taxform" placeholder="UnitNumber, StreetNumber and name"required>
                   <div class="invalid-tooltip">
                     Please provide a valid address.
                   </div>
                 </div> 
 
                 <!-- city -->
-                <div class="col-md-4 position-relative">
+                <div class="col-md-4 position-relative ">
                   <label for="validationTooltip03" class="form-label">City</label>
-                  <input type="text" class="form-control" id="validationTooltip03" required>
+                  <input type="text" class="form-control taxform" required>
                   <div class="invalid-tooltip">
                     Please provide a valid city.
                   </div>
                 </div>
                 <!-- province -->
-                <div class="col-md-4 position-relative">
+                <div class="col-md-4 position-relative ">
                   <label for="validationTooltip04" class="form-label">Province</label>
-                  <select class="form-select" id="validationTooltip04" required>
+                  <select class="form-select taxform" required>
                     <option selected disabled placeholder="">Choose...</option>
                     <option>Alberta</option>
                     <option>British Columbia</option>
@@ -202,17 +197,17 @@
                   </div>
                 </div>
                 <!-- zip -->
-                <div class="col-md-4 position-relative">
+                <div class="col-md-4 position-relative ">
                   <label for="validationTooltip05" class="form-label">Zip</label>
-                  <input type="text" class="form-control" id="validationTooltip05" required>
+                  <input type="text" class="form-control taxform" required>
                   <div class="invalid-tooltip">
                     Please provide a valid zip.
                   </div>
                 </div>
                 <!-- marriage -->
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label for="validationCustom04" class="form-label">Marital Status</label>
-                  <select class="form-select" id="validationCustom04" required>
+                  <select class="form-select taxform"  required>
                     <option selected disabled placeholder="">Choose...</option>
                     <option>Single</option>
                     <option>Married</option>
@@ -226,81 +221,47 @@
                   </div>
                 </div>
                 <!-- first time taxing -->
-                <div class="col-md-3">
-                  <label for="validationCustomUsername" class="form-label">First time tax filling in CA?</label>
-                  <div class="input-group has-validation">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                          <label class="form-check-label" for="flexRadioDefault1">
-                            Yes
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                          <label class="form-check-label" for="flexRadioDefault2">
-                            No
-                          </label>
-                        </div>
-                      </div>
-                    </div>
+                <div class="col-md-4 ">
+                  <label for="validationCustom04" class="form-label">First time tax filling in CA?</label>
+                  <select class="form-select taxform"  required>
+                    <option selected disabled placeholder="">Choose...</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid statu.
                   </div>
                 </div>
                 <!-- citizen -->
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label for="validationCustomUsername" class="form-label">Are you a Canadian Citizen?</label>
-                  <div class="input-group has-validation">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                          <label class="form-check-label" for="flexRadioDefault1">
-                            Yes
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                          <label class="form-check-label" for="flexRadioDefault2">
-                            No
-                          </label>
-                        </div>
-                      </div>
-                    </div>
+                  <select class="form-select taxform"  required>
+                    <option selected disabled placeholder="">Choose...</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid statu.
                   </div>
+                </div>
                 </div>
                 <!-- existing -->
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label for="validationCustomUsername" class="form-label">Existing client?</label>
-                  <div class="input-group has-validation">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                          <label class="form-check-label" for="flexRadioDefault1">
-                            Yes
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                          <label class="form-check-label" for="flexRadioDefault2">
-                            No
-                          </label>
-                        </div>
-                      </div>
-                    </div>
+                  <select class="form-select taxform"  required>
+                    <option selected disabled placeholder="">Choose...</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid statu.
                   </div>
                 </div>
-                
+                <button id = "tfbtn">submit</button>
               </form>
   <!-- row -->
   </div>
+
 <!-- container -->
 </div>          
 </form>
@@ -318,7 +279,7 @@
       </h2>
 
       <!-- table -->
-      <table class="table-striped table-hover" align="center">
+      <table class="table-striped table-hover" align ="center">
         <thead>
           <tr>
             <th>Mailing Address</th>
@@ -331,19 +292,19 @@
         <tbody>
             <tr>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Toronto">
+                <input type="text" class="form-control"  placeholder="Toronto">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="YYYY/MM/DD">
+                <input type="text" class="form-control"  placeholder="YYYY/MM/DD">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="5000">
+                <input type="text" class="form-control"  placeholder="5000">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Mark">
+                <input type="text" class="form-control" placeholder="Mark">
               </td>
               <td>
-                <select class="form-select" id="validationCustom04" required>
+                <select class="form-select" required>
                   <option selected disabled placeholder="">Choose...</option>
                   <option>Student</option>
                   <option>Rental</option>
@@ -354,19 +315,19 @@
             </tr>
             <tr>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Toronto">
+                <input type="text" class="form-control" placeholder="Toronto">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="YYYY/MM/DD">
+                <input type="text" class="form-control"  placeholder="YYYY/MM/DD">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="5000">
+                <input type="text" class="form-control" placeholder="5000">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Mark">
+                <input type="text" class="form-control"  placeholder="Mark">
               </td>
               <td>
-                <select class="form-select" id="validationCustom04" required>
+                <select class="form-select"  required>
                   <option selected disabled placeholder="">Choose...</option>
                   <option>Student</option>
                   <option>Rental</option>
@@ -377,19 +338,19 @@
             </tr>
             <tr>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Toronto">
+                <input type="text" class="form-control"  placeholder="Toronto">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="YYYY/MM/DD">
+                <input type="text" class="form-control" placeholder="YYYY/MM/DD">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="5000">
+                <input type="text" class="form-control"  placeholder="5000">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Mark">
+                <input type="text" class="form-control"  placeholder="Mark">
               </td>
               <td>
-                <select class="form-select" id="validationCustom04" required>
+                <select class="form-select" required>
                   <option selected disabled placeholder="">Choose...</option>
                   <option>Student</option>
                   <option>Rental</option>
@@ -400,19 +361,19 @@
             </tr>
             <tr>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Toronto">
+                <input type="text" class="form-control" placeholder="Toronto">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="YYYY/MM/DD">
+                <input type="text" class="form-control" placeholder="YYYY/MM/DD">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="5000">
+                <input type="text" class="form-control" placeholder="5000">
               </td>
               <td>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Mark">
+                <input type="text" class="form-control" placeholder="Mark">
               </td>
               <td>
-                <select class="form-select" id="validationCustom04" required>
+                <select class="form-select"  required>
                   <option selected disabled placeholder="">Choose...</option>
                   <option>Student</option>
                   <option>Rental</option>
@@ -438,7 +399,7 @@
         </h2>
 
         <!-- table -->
-        <table class="table-striped table-hover">
+        <table class="table-striped table-hover"  align ="center">
           <thead>
             <tr>
               <th>First Name</th>
@@ -450,44 +411,44 @@
           <tbody>
               <tr>
                 <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Mark">
+                  <input type="text" class="form-control" placeholder="Mark">
                 </td>
                 <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Lee">
+                  <input type="text" class="form-control"  placeholder="Lee">
                 </td>
                 <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="9 digits">
+                  <input type="text" class="form-control" placeholder="9 digits">
                 </td>
                 <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="YYYY/MM/DD">
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Mark">
-                </td>
-                <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Lee">
-                </td>
-                <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="9 digits">
-                </td>
-                <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="YYYY/MM/DD">
+                  <input type="text" class="form-control" placeholder="YYYY/MM/DD">
                 </td>
               </tr>
               <tr>
                 <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Mark">
+                  <input type="text" class="form-control"  placeholder="Mark">
                 </td>
                 <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Lee">
+                  <input type="text" class="form-control"  placeholder="Lee">
                 </td>
                 <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="9 digits">
+                  <input type="text" class="form-control"  placeholder="9 digits">
                 </td>
                 <td>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="YYYY/MM/DD">
+                  <input type="text" class="form-control"  placeholder="YYYY/MM/DD">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" class="form-control"  placeholder="Mark">
+                </td>
+                <td>
+                  <input type="text" class="form-control"  placeholder="Lee">
+                </td>
+                <td>
+                  <input type="text" class="form-control"  placeholder="9 digits">
+                </td>
+                <td>
+                  <input type="text" class="form-control"  placeholder="YYYY/MM/DD">
                 </td>
               </tr>
           </tbody>
@@ -512,8 +473,8 @@
           </b>
       </h3>
       <div class="mb-3">
-        <label for="formFile" class="form-label formfile">Default file input example</label>
-        <input class="form-control form-file" type="file"  >
+        <label for="formFile" class="form-label ">Default file input example</label>
+        <input class="form-control form-file formfile" type="file"  >
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Default file input example</label>
@@ -554,7 +515,7 @@
         </div>
       </div>
       <div class="d-grid gap-2 col-1 mx-auto" >
-        <button class="btn btn-primary "  id ="upload">Submit form</button>
+        <button class="btn btn-primary"  id ="upload">Submit form</button>
       </div>
     </form>
   </section>
@@ -665,6 +626,7 @@
 </body>
 <script type="module" src="js/auth.js"></script>
 <script type="module" src="js/ui.js"></script>
+<script type="module" src="js/app.js"></script>
 
 <!-- copyright -->
 <footer class="p-5 bg-dark text-light text-center">
