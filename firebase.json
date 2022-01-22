@@ -17,9 +17,12 @@
     "auth": {
       "port": 9099
     },
+<<<<<<< Updated upstream
     "functions": {
       "port": 5001
     },
+=======
+>>>>>>> Stashed changes
     "firestore": {
       "port": 8080
     },
@@ -27,8 +30,15 @@
       "port": 9000
     },
     "storage": {
+<<<<<<< Updated upstream
       "port": 9199,
       "rules": "storage.rules"
+=======
+      "port": 9199
+>>>>>>> Stashed changes
     }
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }
