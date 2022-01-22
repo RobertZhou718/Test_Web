@@ -15,7 +15,7 @@ import {
   txtPassword,
   btnLogin,
   btnSignup,
-  loginDiv,
+  showLoginDiv,
   showUserInfo,
   hideLoginError,
   showLoginError,
@@ -46,11 +46,7 @@ const loginEmailPassword = async () => {
       loginemail,
       loginpassword
     );
-    showUserInfo();
-    console.log(userCredential.user);
-    console.log(loginDiv);
   } catch (error) {
-    console.log(error);
     showLoginError(error);
   }
 };
@@ -99,7 +95,11 @@ export function loginWithAuthProvider(provider) {
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      console.log(user);
+      showUserInfo();
+
     } else {
+      showLoginDiv();
     }
   });
 };
