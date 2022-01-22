@@ -3,7 +3,7 @@ import { ref } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-storage.j
 const storageRef = ref(storage, "file/file.pdf");
 
 function uploadflie() {
-  let file = document.querySelectorAll("formfile").files;
+  let file = document.querySelectorAll("formfile");
   console.log(file);
   let thisRef = storageRef.child(file.name);
 
