@@ -49,7 +49,7 @@ function downLoadExcel(data, data1, fileName) {
   const storageRef = ref(storage, userEmail + "/" + fileName);
 
   uploadString(storageRef, str).then((snapshot) => {
-    console.log("Uploaded a blob or file!");
+    // console.log("Uploaded a blob or file!");
   });
 }
 function uploadflie() {
@@ -61,6 +61,7 @@ function uploadflie() {
     console.log(userEmail);
     uploadBytes(storageRef, file).then((snapshot) => {
       console.log("Uploaded a blob or file!");
+      alert("Submit Success!");
     });
   });
 }
