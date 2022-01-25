@@ -33,7 +33,14 @@ connectAuthEmulator(auth, "http://localhost:9099");
 const createAccount = async () => {
   const signupEmail = txtEmail.value;
   const signupPassword = txtPassword.value;
-  return createUserWithEmailAndPassword(auth, signupEmail, signupPassword);
+  try {
+    createUserWithEmailAndPassword(auth, signupEmail, signupPassword);
+    console.log("eqweqw");
+  } catch (error) {
+    console.log(error);
+    showLoginError(error);
+  }
+  // return createUserWithEmailAndPassword(auth, signupEmail, signupPassword);
 };
 btnSignup.addEventListener("click", createAccount);
 
@@ -41,11 +48,8 @@ const loginEmailPassword = async () => {
   const loginemail = txtEmail.value;
   const loginpassword = txtPassword.value;
   try {
-    const userCredential = await signInWithEmailAndPassword(
-      auth,
-      loginemail,
-      loginpassword
-    );
+    // const userCredential =
+    await signInWithEmailAndPassword(auth, loginemail, loginpassword);
   } catch (error) {
     showLoginError(error);
   }
@@ -93,7 +97,9 @@ export function loginWithAuthProvider(provider) {
       // ...
     });
 }
+
 export let userEmail;
+
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {

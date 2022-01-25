@@ -64,6 +64,5 @@ function uploadflie() {
     });
   });
 }
-document.getElementById("upload").addEventListener("click", uploadflie);
 
-//document.getElementById("tfbtn").addEventListener("click", TfExcel);
+document.getElementById("upload").addEventListener("click", uploadflie);

@@ -25,17 +25,24 @@ export const googleloginbtn = document.querySelector(".google");
 export const loginDiv = document.querySelector("#loginDiv");
 export const userInfo = document.querySelector("#userInfo");
 
+export const sections = document.querySelectorAll("section");
 export const files = [...document.querySelectorAll(".formfile")];
 
 export const showLoginDiv = () => {
   loginDiv.classList.add("d-flex");
   loginDiv.style.display = "block";
   userInfo.style.display = "none";
+  sections.forEach((item) => {
+    item.style.display = "none";
+  });
 };
 export const showUserInfo = () => {
   userInfo.style.display = "block";
   loginDiv.classList.remove("d-flex");
   loginDiv.style.display = "none";
+  sections.forEach((item) => {
+    item.style.display = "block";
+  });
 };
 export const hideLoginError = () => {
   divLoginError.style.display = "none";
@@ -54,3 +61,4 @@ export const showLoginState = (user) => {
 };
 
 hideLoginError();
+showLoginDiv();
