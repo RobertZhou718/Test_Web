@@ -67,15 +67,15 @@ export function loginWithGoogle() {
   return loginWithAuthProvider(googleProvider);
 }
 googleloginbtn.addEventListener("click", loginWithGoogle);
-export function loginWithFacebook() {
-  return loginWithAuthProvider(facebookProvider);
-}
-facebookloginbtn.addEventListener("click", loginWithFacebook);
+// export function loginWithFacebook() {
+//   return loginWithAuthProvider(facebookProvider);
+// }
+//facebookloginbtn.addEventListener("click", loginWithFacebook);
 
-export function loginWithTwitter() {
-  return loginWithAuthProvider(twitterProvider);
-}
-twitterloginbtn.addEventListener("click", loginWithTwitter);
+// export function loginWithTwitter() {
+//   return loginWithAuthProvider(twitterProvider);
+// }
+// twitterloginbtn.addEventListener("click", loginWithTwitter);
 
 export function loginWithAuthProvider(provider) {
   signInWithPopup(auth, provider)
@@ -89,13 +89,14 @@ export function loginWithAuthProvider(provider) {
     })
     .catch((error) => {
       // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.email;
+      // const errorCode = error.code;
+      // const errorMessage = error.message;
+      // // The email of the user's account used.
+      // const email = error.email;
       // The AuthCredential type that was used.
-      const credential = provider.credentialFromError(error);
+      //const credential = provider.credentialFromError(error);
       // ...
+      showLoginError(error);
     });
 }
 
