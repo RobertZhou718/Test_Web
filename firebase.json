@@ -5,7 +5,10 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "i18n": {
+      "root": "/localized-files"  
+   }
   },
   "emulators": {
     "hosting": {
@@ -33,4 +36,5 @@
   "storage": {
     "rules": "storage.rules"
   }
+ 
 }
