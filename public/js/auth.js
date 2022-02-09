@@ -6,8 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  FacebookAuthProvider,
-  TwitterAuthProvider,
+  sendEmailVerification,
   signOut,
 } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js";
 import {
@@ -19,15 +18,13 @@ import {
   showUserInfo,
   hideLoginError,
   showLoginError,
-  lblAuthState,
+  showLoginState,
   googleloginbtn,
-  facebookloginbtn,
-  twitterloginbtn,
 } from "./ui.js";
 
 const googleProvider = new GoogleAuthProvider();
-const facebookProvider = new FacebookAuthProvider();
-const twitterProvider = new TwitterAuthProvider();
+//const facebookProvider = new FacebookAuthProvider();
+//const twitterProvider = new TwitterAuthProvider();
 //connectAuthEmulator(auth, "http://localhost:9099");
 
 const createAccount = async () => {
@@ -35,8 +32,11 @@ const createAccount = async () => {
   const signupPassword = txtPassword.value;
   try {
     await createUserWithEmailAndPassword(auth, signupEmail, signupPassword);
-    console.log("eqweqw");
-    alert("Success");
+    //console.log("eqweqw");
+    //alert("Success");
+    sendEmailVerification(auth.currentUser).then(() => {
+      alert("Email verification sent!");
+    });
   } catch (error) {
     console.log(error);
     showLoginError(error);
@@ -67,35 +67,11 @@ export function loginWithGoogle() {
   return loginWithAuthProvider(googleProvider);
 }
 googleloginbtn.addEventListener("click", loginWithGoogle);
-// export function loginWithFacebook() {
-//   return loginWithAuthProvider(facebookProvider);
-// }
-//facebookloginbtn.addEventListener("click", loginWithFacebook);
-
-// export function loginWithTwitter() {
-//   return loginWithAuthProvider(twitterProvider);
-// }
-// twitterloginbtn.addEventListener("click", loginWithTwitter);
 
 export function loginWithAuthProvider(provider) {
   signInWithPopup(auth, provider)
-    .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = provider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
-      const user = result.user;
-      // ...
-    })
+    .then((result) => {})
     .catch((error) => {
-      // Handle Errors here.
-      // const errorCode = error.code;
-      // const errorMessage = error.message;
-      // // The email of the user's account used.
-      // const email = error.email;
-      // The AuthCredential type that was used.
-      //const credential = provider.credentialFromError(error);
-      // ...
       showLoginError(error);
     });
 }
@@ -105,9 +81,14 @@ export let userEmail;
 const monitorAuthState = async () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      console.log(user);
-      showUserInfo();
-      userEmail = user.email;
+      if (user.emailVerified) {
+        console.log(user);
+        showUserInfo();
+        showLoginState(user);
+        userEmail = user.email;
+      } else {
+        alert("请验证");
+      }
     } else {
       showLoginDiv();
     }

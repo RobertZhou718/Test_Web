@@ -70,7 +70,7 @@
                   <a class="nav-link text-dark drop_btn" href="/TaxOnline.html">Tax online</a></li>
            
                 <li class="nav-item drop_down float-end">
-                <a class="nav-link text-dark drop_btn" role="button" aria-expanded="false">language</a>
+                <a class="nav-link text-dark drop_btn" role="button" aria-expanded="false">lang</a>
                 <ul class="dropdown-menu dropdown-menu-light drop_down-content" aria-labelledby="navbarDarkDropdownMenuLink">
                     <li><button class="dropdown-item text-center" id="English">EN</button></li>
                     <li><button class="dropdown-item text-center" id="Chinese">中文</button></li>
@@ -352,7 +352,19 @@
     <script type="module" src="js/config.js"></script>
     <script type="module" src="js/translate.js"></script>
   
-
+    <script>
+        function refresh(){
+       url = location.href;
+       console.log(url);
+      var once = url.split("#");
+      if (once[1] != "en") {
+       once[0] += "#en";
+       self.location.replace( once[0]);
+       window.location.reload();
+       }
+       }
+       setTimeout('refresh()', 1000);  
+       </script>
 
 
 </body>

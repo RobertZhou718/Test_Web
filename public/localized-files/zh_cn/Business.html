@@ -24,7 +24,7 @@
                     <li class="nav-item drop_down">
                       <a class="nav-link text-dark drop_btn" href="/">首页</a></li>
                     <li class="nav-item drop_down">
-                        <a class="nav-link text-dark drop_btn" href="/Personal.html" id="navbarDarkDropdownMenuLink" role="button"  aria-expanded="false">
+                        <a class="nav-link text-dark drop_btn" href="/Personal" id="navbarDarkDropdownMenuLink" role="button"  aria-expanded="false">
                             个人报税
                         </a>
                         <ul class="dropdown-menu dropdown-menu-light drop_down-content" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -66,6 +66,14 @@
                     </li>
                     <li class="nav-item drop_down bg-warning">
                       <a class="nav-link text-dark drop_btn" href="/TaxOnline.html">线上报税</a></li>
+                      
+                <li class="nav-item drop_down float-end">
+                    <a class="nav-link text-dark drop_btn" role="button" aria-expanded="false">语言</a>
+                    <ul class="dropdown-menu dropdown-menu-light drop_down-content" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><button class="dropdown-item text-center" id="English">EN</button></li>
+                        <li><button class="dropdown-item text-center" id="Chinese">中文</button></li>
+                    </ul>
+                    </li> 
                 </ul>
             </div>          
         </div>  
@@ -260,6 +268,20 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
              crossorigin="anonymous"
     ></script>
-  
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/translate.js"></script>
+    <script>
+        function refresh(){
+       url = location.href;
+       console.log(url);
+       var once = url.split("#");
+       if (once[1] != 'zh') {
+       once[0] += "#zh";
+       self.location.replace( once[0]);
+       window.location.reload();
+       }
+       }
+       setTimeout('refresh()', 1000);  
+       </script>
 </body>
 </html>

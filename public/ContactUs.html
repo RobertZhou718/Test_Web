@@ -71,6 +71,13 @@
                     </li>
                     <li class="nav-item drop_down bg-warning">
                       <a class="nav-link text-dark drop_btn" href="/TaxOnline.html">Tax online</a></li>
+                      <li class="nav-item drop_down float-end">
+                        <a class="nav-link text-dark drop_btn" role="button" aria-expanded="false">lang</a>
+                        <ul class="dropdown-menu dropdown-menu-light drop_down-content" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><button class="dropdown-item text-center" id="English">EN</button></li>
+                            <li><button class="dropdown-item text-center" id="Chinese">中文</button></li>
+                        </ul>
+                        </li> 
                 </ul>
             </div>          
         </div>  
@@ -91,7 +98,7 @@
                   </div>
                   <div class="col-md">
                     <div class="text">
-                      <p><span>Address:</span> xxxxxx</p>
+                      <p><span>Address:</span>Unit 119, 445 apple creek blvd, Markham, ON L3R 9X7</p>
                     </div>
                   </div>
                 </div>
@@ -106,7 +113,7 @@
                   </div>
                   <div class="col-md">
                     <div class="text">
-                      <p><span>Phone:</span> <a>+ 1235 2355 98</a></p>
+                      <p><span>Phone:</span> <a>+1 647-830-8595</a></p>
                     </div>
                   </div>
                 </div>
@@ -121,7 +128,7 @@
                   </div>
                   <div class="col-md">
                     <div class="text">
-                      <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                      <p><span>Email:</span> <a href="jessieshan@sumaccounting.ca">jessieshan@sumaccounting.ca</a></p>
                     </div>
                   </div>
                 </div>
@@ -136,7 +143,7 @@
                   </div>
                   <div class="col-md">
                     <div class="text">
-                      <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                      <p><span>Website</span> <a href="sumaccounting.ca">sumaccounting.ca</a></p>
                     </div>
                   </div>
                 </div>            
@@ -224,6 +231,21 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
              crossorigin="anonymous"
     ></script>
+    <script type="module" src="js/config.js"></script>
     <script src="./js/ContactForm.js"></script>
+    <script type="module" src="js/translate.js"></script>
+    <script>
+      function refresh(){
+     url = location.href;
+     console.log(url);
+    var once = url.split("#");
+    if (once[1] != "en") {
+     once[0] += "#en";
+     self.location.replace( once[0]);
+     window.location.reload();
+     }
+     }
+     setTimeout('refresh()', 1000);  
+     </script>
 </body>
 </html>

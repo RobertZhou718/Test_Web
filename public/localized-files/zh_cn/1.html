@@ -9,13 +9,13 @@
         rel="stylesheet"  
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
         crossorigin="anonymous"/>
-         <!-- Font Awesome CSS -->
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css'>
-      
-    <!-- Vanilla Datepicker CSS -->
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/css/datepicker.min.css'>
+
+       
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/date.css">
     <title>TaxOnline</title>
 </head>
 <body>
@@ -96,65 +96,24 @@
       </div>          
   </div>  
 </nav>
-<section class=" p-5 ">
-  <div class="container mt-5">
-    <h2 class="large">
-      <b><strong>Reservation</strong></b>
-    </h2>
-    <h3 class="small">
-      <b>
-       Please select a date and time to make an appointment.
-      </b>
-  </h3>
-    <div class="row">
-      <div class="col-md-5">
-        <div class=" input-group ">
-          <i class="bi bi-calendar-date input-group-text"></i>
-          <input type="text" id="datepicker2" class="datepicker_input form-control " placeholder="DD/MM/YYYY" required>
-        </div>
-      </div>
-     
-      <div class="col-md-5">
-        <select class="form-select" id="time" required>
-          <option selected disabled placeholder="Time">Choose...</option>
-          <option>8:00</option>
-          <option>9:00</option>
-          <option>10:00</option>
-          <option>11:00</option>
-          <option>12:00</option>
-          <option>13:00</option>
-          <option>14:00</option>
-          <option>15:00</option>
-          <option>16:00</option>
-          <option>17:00</option>
-          <option>18:00</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <button class="btn btn-primary" id="reserve">Select</button>
-      </div>
-     
-    </div>
-  </div>
-</section>
-<hr/>
-<section class=""> 
-  <form action="#" class="form-horizontal" role="form">
+
+<section class="p-5"> 
+  <form action="#" class="form-horizontal mt-5" role="form">
     <div class="container">
-        <!-- <div class="row">
+        <div class="row">
           <div class="col-md-8">
             <span class="medium" style="background-color: blanchedalmond;">
               Due to the high volume of customers, our current process time will be: <b><strong>1 DAY</strong></b>
           </span>
           </div>
-        </div> -->
-          
+        </div>
+          <hr/>
           <h2 class="large">
               <b><strong>Tax Form</strong></b>
           </h2>
 
           <!-- basic info -->
-          <form action="#" class="form-horizontal " role="form">
+          <form action="#" class="form-horizontal mt-5" role="form">
             <div class="container-fluid">
               <div class="row">
                 <!-- first name -->
@@ -171,7 +130,7 @@
                 <div class="col-md-4 ">
                   <label for="validationCustomBirth" class="form-label">Date of Birth<span class ="text-danger" >*</span></label>
                   <div class="input-group has-validation">
-                    <input type="text" class="form-control taxform datepicker_input" id="datepicker1" placeholder="DD/MM/YYYY" aria-describedby="inputGroupPrepend" required>
+                    <input type="text" class="form-control taxform" placeholder="1999/01/23" aria-describedby="inputGroupPrepend" required>
 
                   </div>
                 </div>
@@ -595,7 +554,7 @@
                 type="password"
                 id="txtPassword"
                 class="form-control form-control-lg"
-              >
+              />
              
             </div>
             <div class="d-flex justify-content-center">
@@ -627,7 +586,8 @@
           <div class="col-md-6 mx-auto ">
          
             <br />
-            <button class="google loginbtn">Login with Google</button>
+    
+            <button class="google loginbtn">sign in with Google</button>
             
           </div>
           
@@ -648,18 +608,12 @@
       <p>Copyright &copy; SumAccounting</p>
   </div>
 </footer>
-<!-- Bootstrap 5 JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-<!-- Vanilla Datepicker JS -->
-<script src='https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/js/datepicker-full.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
     crossorigin="anonymous"
     ></script>
-    <script type="module" src="js/config.js"></script>
     <script type="module" src="js/translate.js"></script>
-    <script type="module" src="js/reserve.js"></script>
     <script>
       function refresh(){
      url = location.href;
@@ -674,27 +628,7 @@
      setTimeout('refresh()', 1000);  
      </script>
 
-<script>
-  const getDatePickerTitle = elem => {
-    // From the label or the aria-label
-    const label = elem.nextElementSibling;
-    let titleText = '';
-    if (label && label.tagName === 'LABEL') {
-      titleText = label.textContent;
-    } else {
-      titleText = elem.getAttribute('aria-label') || '';
-    }
-    return titleText;
-  }
-  
-  const elems = document.querySelectorAll('.datepicker_input');
-  for (const elem of elems) {
-    const datepicker = new Datepicker(elem, {
-      'format': 'dd/mm/yyyy', // UK format
-      title: getDatePickerTitle(elem)
-    });
-  }      
-  </script>
+   
 
 
 </body>

@@ -24,6 +24,7 @@ export const googleloginbtn = document.querySelector(".google");
 
 export const loginDiv = document.querySelector("#loginDiv");
 export const userInfo = document.querySelector("#userInfo");
+export const userState = document.querySelector("#userState");
 
 export const sections = document.querySelectorAll("section");
 export const files = [...document.querySelectorAll(".formfile")];
@@ -57,7 +58,7 @@ export const showLoginError = (error) => {
   }
 };
 export const showLoginState = (user) => {
-  userInfo.innerHTML = `You're loggged in as ${user.displayName} (uid: ${user.uid},email: ${user.email})`;
+  userState.innerHTML = `${user.email}`;
 };
 
 hideLoginError();

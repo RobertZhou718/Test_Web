@@ -15,7 +15,8 @@ function TfExcel() {
   taxform.forEach((i) => {
     console.log(i.value);
     if (i.value == "") {
-      window.alert("Please Input rhe required form!");
+      alert("Please Input rhe required form!");
+      throw "Please Input rhe required form!";
     }
     data.push(i.value);
   });
@@ -55,14 +56,16 @@ function downLoadExcel(data, data1, fileName) {
 function uploadflie() {
   TfExcel();
   files.forEach((file) => {
-    const filename = file.files[0].name;
-    const storageRef = ref(storage, userEmail + "/" + filename);
-    console.log(file.files[0].name);
-    console.log(userEmail);
-    uploadBytes(storageRef, file).then((snapshot) => {
-      console.log("Uploaded a blob or file!");
-      alert("Submit Success!");
-    });
+    if (file.files[0]) {
+      const filename = file.files[0].name;
+      const storageRef = ref(storage, userEmail + "/" + filename);
+      console.log(file.files[0].name);
+      //console.log(userEmail);
+      uploadBytes(storageRef, file).then((snapshot) => {
+        console.log("Uploaded a blob or file!");
+        alert("Submit Success!");
+      });
+    }
   });
 }
 

@@ -7,8 +7,9 @@
       "**/node_modules/**"
     ],
     "i18n": {
-      "root": "/localized-files"  
-   }
+      "root": "/localized-files"
+    },
+    "cleanUrls": true
   },
   "emulators": {
     "hosting": {
@@ -35,6 +36,8 @@
   },
   "storage": {
     "rules": "storage.rules"
+  },
+  "functions": {
+    "source": "functions"
   }
- 
 }
